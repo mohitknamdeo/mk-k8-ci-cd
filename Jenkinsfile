@@ -5,7 +5,7 @@ node{
   def imageTag = "1.0"
   try{
   stage('Checkout'){
-      git 'https://github.com/maheshkharwadkar/mk-k8-ci-cd.git'
+      git 'https://github.com/mohitknamdeo/mk-k8-ci-cd.git'
   }
 
   stage('RUN Unit Tests'){
