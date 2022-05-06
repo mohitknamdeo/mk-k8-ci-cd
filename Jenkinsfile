@@ -9,6 +9,7 @@ node{
   }
 
   stage('RUN Unit Tests'){
+      sh "install npm"
       sh "npm test"
   }
   stage('Docker Build, Push'){
