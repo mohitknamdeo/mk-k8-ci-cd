@@ -13,11 +13,11 @@
       become: yes
       ignore_errors: no
     - name: Deploy SayarApp
-      shell: "sudo -i /usr/local/bin/helm install sayar-{{ Namespace }} --namespace={{ Namespace }} /var/lib/jenkins/workspace/kubernetes-CI-CD/ansible/sayarapp --set image.repository={{ ImageName }} --set image.tag={{ imageTag }} --set namespace={{ Namespace }}"
+      shell: "sudo -i /usr/local/bin/helm install sayar-{{ Namespace }} --namespace={{ Namespace }} /var/lib/jenkins/workspace/POC/ansible/sayarapp --set image.repository={{ ImageName }} --set image.tag={{ imageTag }} --set namespace={{ Namespace }}"
       delegate_to: localhost
       ignore_errors: no
     - name: Update SayarApp
-      shell: "sudo -i /usr/local/bin/helm upgrade --wait --recreate-pods --namespace={{ Namespace }} --set image.repository={{ ImageName }} --set image.tag={{ imageTag }} --set namespace={{ Namespace }} sayar-{{ Namespace }} /var/lib/jenkins/workspace/kubernetes-CI-CD/ansible/sayarapp"
+      shell: "sudo -i /usr/local/bin/helm upgrade --wait --recreate-pods --namespace={{ Namespace }} --set image.repository={{ ImageName }} --set image.tag={{ imageTag }} --set namespace={{ Namespace }} sayar-{{ Namespace }} /var/lib/jenkins/workspace/POC/ansible/sayarapp"
       delegate_to: localhost
       ignore_errors: no
 
